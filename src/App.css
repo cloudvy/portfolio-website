@@ -1,0 +1,278 @@
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Book.ttf');
+  font-weight: 400;
+}
+
+:root {
+  --contact-font-size: 1.5rem;
+  --main-blue: #1d70ff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  /* position: sticky;
+  top: 0; */
+  width: 100%;
+  padding: 30px 10%;
+  justify-content: space-between;
+}
+
+.navbar-links-container>li {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+/*TODO .navbar-links-container li a {
+  transition: all 200ms ease 0s;
+}
+
+.navbar-links-container li a:hover {
+  transition: all 200ms ease 0s;
+} */
+
+#introContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: grid;
+  align-content: space-between;
+  /* background-color: #ffffff87;  */
+}
+
+.intro {
+  /* background-color: #ffffff66; */
+  display: flex;
+  width: 100%;
+  padding: 30px 10%;
+  justify-content: space-between;
+  margin-top: 10vh;
+  /* align-items: center; */
+}
+
+.intro p {
+  max-width: 60%;
+}
+
+.intro>img {
+  max-height: 500px;
+}
+
+/* smooth-scroll */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+}
+
+.page {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+#mainPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.lighter {
+  background-color: #121212fd;
+}
+
+/* todo remove or style soft TechStack*/
+/* .softSkillContainer {}
+
+.softSkillContainer>li {
+  list-style: none;
+  display: inline;
+  margin: 0px 5px;
+} */
+
+.skillContainer {
+  display: grid;
+  grid-gap: 15px 0px;
+  grid-template-columns: repeat(5, 1fr);
+
+  width: 60%;
+  /* background-color: rgba(236, 18, 62, 0.192); */
+  margin: 4px;
+  padding: 5px 0px;
+}
+
+.skillContainer>*:hover {
+  transition: 200ms;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  opacity: 60%;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.box:hover {
+  transition: 0.2s;
+  opacity: 100%;
+}
+
+#contactMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+
+}
+
+#contactContainer {
+  width: 28%;
+  height: 68%;
+  border: #fff 2px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 55px;
+}
+
+/* media query for laptops */
+@media only screen and (max-width: 1440px) {
+  #contactContainer {
+    width: 50%;
+    height: 80%;
+    border: #fff 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 55px;
+  }
+}
+
+/* media query for mobile */
+@media only screen and (max-width: 768px) {
+  #contactContainer {
+    width: 80%;
+    height: 90%;
+    border: #fff 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 55px;
+  }
+}
+
+#contactContainer>* {
+  width: 90%;
+  color: white;
+}
+
+.cInput {
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  position: relative;
+  width: 100%;
+}
+
+.cLabel {
+  display: block;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.2s;
+  font-size: var(--contact-font-size);
+  color: gray;
+}
+
+.cInput:focus,
+.cInput:not(:placeholder-shown) {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #ffffffcc, var(--main-blue));
+  border-image-slice: 1;
+}
+
+.cInput:focus~.cLabel,
+.cInput:not(:focus):not(:placeholder-shown)+.cLabel {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: .9rem;
+  color: #71c6ff;
+  font-weight: 700;
+}
+
+.cInput:required,
+.cInput:invalid {
+  box-shadow: none;
+}
+
+
+/* comment input form */
+/* #contactContainer>textarea {
+  height: 30%;
+  background-color: transparent;
+  resize: none;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+#contactContainer>textarea:focus {
+  outline: var(--main-blue) 2px solid;
+  transition: 0.3s;
+} */
+
+#contactContainer>textarea {
+  height: 30%;
+  background-color: transparent;
+  resize: none;
+  font-size: var(--contact-font-size);
+  transition: border 0.3s ease-in-out;
+  border: 3px solid gray;
+}
+
+#contactContainer>textarea:focus,
+#contactContainer>textarea:not(:focus):not(:placeholder-shown) {
+  outline: none;
+  border-image: linear-gradient(90deg, #fff, var(--main-blue));
+  border-image-slice: 1;
+}
+
+#contactContainer>input:focus {
+  outline: 2px white solid;
+}
+
+/* todo: style the button */
+#submitBtn {
+  background-color: var(--main-blue);
+  width: 50%;
+  padding: 10px 4px;
+}
